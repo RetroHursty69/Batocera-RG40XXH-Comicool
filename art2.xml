@@ -1,0 +1,16 @@
+<theme>
+   <formatVersion>7</formatVersion>
+   <view name="system">
+      <image name="background65" extra="true"> 
+        <pos>1 0.3893</pos>
+         <path>./_inc/comic.png</path>          
+         <maxSize>0.347 0.602</maxSize>              
+         <path>./_inc/comic.png</path>
+			<storyboard>
+				<animation property="opacity" from="0" to="0" duration="100" mode="Linear"/>
+				<animation property="opacity" from="0" to="1" begin="200" duration="250" mode="Linear"/>
+				<animation property="x" from="1" to="0.768" begin="200" duration="250" mode="Linear"/>	
+			</storyboard>                    
+      </image>  
+     </view>    
+    </theme>

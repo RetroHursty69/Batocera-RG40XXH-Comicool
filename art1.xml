@@ -1,0 +1,17 @@
+<theme>
+   <formatVersion>7</formatVersion>
+   
+   <view name="system">
+      <image name="background65" extra="true"> 
+        <pos>1 0.3898</pos>
+         <path>./_inc/cab.png</path>          
+         <maxSize>0.391 0.522</maxSize>              
+         <path>./_inc/cab.png</path>
+			<storyboard>
+				<animation property="opacity" from="0" to="0" duration="100" mode="Linear"/>
+				<animation property="opacity" from="0" to="1" begin="200" duration="250" mode="Linear"/>
+				<animation property="x" from="1" to="0.771" begin="200" duration="250" mode="Linear"/>	
+			</storyboard>                    
+      </image>  
+   </view>      
+    </theme>

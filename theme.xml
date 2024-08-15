@@ -1,0 +1,499 @@
+
+<!--
+theme name:     Comicool 2024
+creator:	    Dwayne Hurst (aka Hursty)
+version         1.0
+-->
+
+<?xml version="1.0" encoding="UTF-8"?>
+<theme>
+   <formatVersion>7</formatVersion>
+
+<!--
+Carousel wheel and main menu background
+-->
+
+
+<feature supported="carousel">
+   <view name="system">
+      <carousel name="systemcarousel">
+        <zIndex>4</zIndex>	      
+        <type>horizontal</type>
+        <pos>0 0.37</pos>
+        <size>1 1</size>
+        <logoScale>1.1</logoScale>
+        <logoSize>0.32 0.32</logoSize>
+        <color>00000000</color>
+        <maxLogoCount>5</maxLogoCount>
+		<logoAlignment>center</logoAlignment> 
+         <zIndex>6</zIndex>			
+      </carousel>                       
+
+      <image name="background60" extra="true">
+         <origin>0 0</origin>
+         <pos>0 0</pos>
+         <size>1 1</size>
+         <zIndex>1</zIndex>                 
+         <path>./_inc/images/background.png</path>         
+      </image> 
+
+      <image name="background63" extra="true">
+         <origin>0 0</origin>
+         <pos>0 0</pos>
+         <size>1 1</size>
+         <zIndex>10</zIndex>                 
+         <path>./_inc/images/border.png</path>         
+      </image> 
+
+      <image name="background65" extra="true">
+         <origin>0.5 0.5</origin>
+         <zIndex>9</zIndex>                                
+      </image> 
+
+	 <video name="backgroundvideo" extra="true">
+        <path>{random}</path>          
+        <visible>true</visible>	 	 
+        <rotation>0</rotation>  
+        <roundCorners>0.00</roundCorners>             
+        <pos>0.020 0.0277</pos>
+        <origin>0 0</origin>
+        <size>0.5263 0.5305</size>
+        <color>FFFFFF</color>
+        <zIndex>2</zIndex>
+			<storyboard>
+				<animation property="opacity" from="0" to="0" duration="100" mode="Linear"/>
+				<animation property="opacity" from="0" to="1" begin="200" duration="250" mode="Linear"/>
+			</storyboard>                   
+     </video>  
+
+		<batteryIndicator name="batteryIndicator">
+			<pos>0.89 0.019</pos>
+			<size>0.08 0.06</size>
+			<horizontalAlignment>right</horizontalAlignment>
+			<incharge>./_inc/images/battery/incharge.svg</incharge>
+			<full>./_inc/images/battery/full.svg</full>
+			<at75>./_inc/images/battery/75.svg</at75>
+			<at50>./_inc/images/battery/50.svg</at50>
+			<at25>./_inc/images/battery/25.svg</at25>
+			<empty>./_inc/images/battery/empty.svg</empty>
+			<planemodeIcon>./_inc/icons/Planemode.png</planemodeIcon>
+			<color>FFFFFFA0</color>
+		</batteryIndicator>
+ 
+              
+      <text name="systemInfo">     
+         <pos>-0.27 0.625</pos>
+         <backgroundColor>00000000</backgroundColor>
+         <color>000000</color>
+         <fontPath>./_inc/fonts/Bangers.ttf</fontPath>
+	     <fontSize>0.07</fontSize>
+         <zIndex>70</zIndex>       	     
+      </text>            
+   </view>
+</feature>
+
+   <include subset="Art Choice" name="Display Cabinet">./art1.xml</include>
+   <include subset="Art Choice" name="Comic">./art2.xml</include>
+
+
+   <view name="system">
+      <helpsystem name="help">
+         <fontPath>./_inc/fonts/Bangers.ttf</fontPath>
+         <fontSize>0.04</fontSize>     
+         <pos>1.18 0.946</pos>      
+         <textColor>ffffff</textColor>
+         <iconColor>ffffff</iconColor>
+      </helpsystem>
+   </view>  
+
+   <view name="detailed,video, basic">
+      <helpsystem name="help">
+         <fontPath>./_inc/fonts/Bangers.ttf</fontPath>
+         <fontSize>0.04</fontSize>     
+         <pos>1.08 0.946</pos>      
+         <textColor>ffffff</textColor>
+         <iconColor>ffffff</iconColor>
+      </helpsystem>
+   </view> 
+    
+   
+<!--
+System Gamelist
+--> 
+
+   <view name="detailed,video">
+      <textlist name="gamelist">
+         <zIndex>6</zIndex>	      
+	     <selectedColor>FFFF00</selectedColor>
+	     <selectorColor>00000000</selectorColor>
+	     <selectorHeight>.0235</selectorHeight>       
+         <pos>0.56 0.2</pos>
+         <size>0.42 0.76</size> 
+         <primaryColor>000000</primaryColor>
+         <secondaryColor>000000</secondaryColor>
+         <fontPath>./_inc/fonts/Bangers.ttf</fontPath>
+         <fontSize>0.039</fontSize>
+         <forceUppercase>1</forceUppercase>
+         <scrollSound></scrollSound>
+         <alignment>center</alignment>
+	     <horizontalMargin>0.035</horizontalMargin>
+	     <lineSpacing>0.9</lineSpacing>   
+      </textlist>
+   </view> 
+   
+
+     <view name="basic">
+      <textlist name="gamelist">
+         <zIndex>6</zIndex>	      
+	     <selectedColor>FFFF00</selectedColor>
+	     <selectorColor>00000000</selectorColor>
+	     <selectorHeight>.0235</selectorHeight>       
+         <pos>0.56 0.025</pos>
+         <size>0.42 0.7</size> 
+         <primaryColor>000000</primaryColor>
+         <secondaryColor>000000</secondaryColor>
+         <fontPath>./_inc/fonts/Bangers.ttf</fontPath>
+         <fontSize>0.039</fontSize>
+         <forceUppercase>1</forceUppercase>
+         <scrollSound></scrollSound>
+         <alignment>center</alignment>
+	     <horizontalMargin>0.035</horizontalMargin>
+	     <lineSpacing>0.9</lineSpacing>   
+      </textlist>
+   </view>  
+
+   <view name="video, detailed, basic, gamecarousel, grid">   
+      <text name="md_lbl_rating, md_lbl_releasedate, md_lbl_developer, md_lbl_publisher, md_lbl_genre, md_lbl_lastplayed, md_lbl_playcount, md_rating, md_developer, md_publisher, md_genre, md_playcount, md_lastplayed">
+         <pos>1 1</pos>
+      </text>
+      <text name="md_lbl_rating,md_lbl_releasedate, md_lbl_developer, md_lbl_publisher, md_lbl_genre, md_lbl_lastplayed, md_lbl_playcount,md_lbl_players,md_developer, md_publisher, md_genre, md_playcount, md_lastplayed,md_description,md_players,md_releasedate">
+         <color>000000</color>
+         <fontPath>./_inc/fonts/Bangers.ttf</fontPath>
+         <fontSize>0.035</fontSize>
+      </text>
+      <text name="md_lbl_rating">
+         <pos>1.52 0.9</pos>
+         <size>0.2 0.02</size>
+         <color>ffffff</color>
+         <zIndex>5</zIndex>                 
+      </text>
+      <rating name="md_rating">
+         <zIndex>25</zIndex>       
+         <pos>1.35 0.635</pos>
+         <size>0.05 0.04</size>
+         <filledPath>./_inc/images/star_filled.png</filledPath>
+         <unfilledPath>./_inc/images/star_empty.png</unfilledPath>
+      </rating>
+      <text name="md_lbl_players">
+         <pos>0.04 0.6</pos>
+         <size>0.15 0.02</size>
+         <zIndex>43</zIndex>         
+      </text>
+      <text name="md_players">
+         <pos>0.16 0.6</pos>
+         <size>0.15 0.02</size>
+         <zIndex>43</zIndex>
+         <color>000000</color>                  
+      </text>
+      <text name="md_lbl_releasedate">
+         <pos>0.04 0.65</pos>
+         <size>0.2 0.02</size>
+         <zIndex>43</zIndex>         
+      </text>
+      <datetime name="md_releasedate">
+         <pos>0.16 0.65</pos>
+         <size>0.2 0.02</size>
+         <zIndex>43</zIndex>
+         <color>000000</color>                  
+      </datetime>
+      <text name="md_lbl_genre">
+         <pos>0.04 0.7</pos>
+         <size>0.15 0.02</size>
+         <color>000000</color>
+         <zIndex>5</zIndex>                   
+      </text>
+      <text name="md_genre">
+         <pos>0.16 0.7</pos>
+         <size>0.24 0.02</size>
+         <color>000000</color>         
+         <zIndex>5</zIndex>         
+      </text>         
+      <text name="md_lbl_playcount">
+         <pos>1.54 0.8</pos>
+         <size>0.23 0.02</size>
+         <color>ffffff</color>
+         <zIndex>5</zIndex>                   
+      </text>
+      <text name="md_playcount">
+         <pos>1.75 0.8</pos>
+         <size>0.2 0.02</size>
+         <color>ffffff</color>         
+         <zIndex>5</zIndex>         
+      </text>
+      <text name="md_lbl_publisher">
+         <pos>1.17 0.865</pos>
+         <size>0.1 0.02</size>
+         <color>ffffff</color>
+         <zIndex>5</zIndex>                   
+      </text>
+      <text name="md_publisher">
+         <pos>1.27 0.865</pos>
+         <size>0.21 0.02</size>
+         <color>ffffff</color>         
+         <zIndex>5</zIndex>         
+      </text>
+      <text name="md_lbl_developer">
+         <pos>1.165 0.895</pos>
+         <size>0.1 0.02</size>
+         <color>ffffff</color>
+         <zIndex>5</zIndex>                   
+      </text>
+      <text name="md_developer">
+         <pos>1.265 0.895</pos>
+         <size>0.21 0.02</size>
+         <color>ffffff</color>         
+         <zIndex>5</zIndex>         
+      </text>
+      <text name="md_lbl_lastplayed">
+         <pos>1.54 0.85</pos>
+         <size>0.2 0.02</size>
+         <zIndex>43</zIndex>         
+      </text>
+      <datetime name="md_lastplayed">
+         <pos>1.75 0.85</pos>
+         <size>0.23 0.02</size>
+         <zIndex>43</zIndex>
+         <color>ffffff</color>                  
+      </datetime>                            
+      <text name="md_description">
+         <pos>1.48 0.74</pos>
+         <size>0.3 0.25</size>
+         <color>ffffff</color>
+         <alignment>left</alignment>   
+         <zIndex>5</zIndex>         
+      </text>
+   </view>
+
+
+
+<!--
+Images, boxart, snaps, wheel art etc
+--> 
+
+
+  <view name="basic">  
+      <image name="background59" extra="true">
+         <origin>0 0</origin>
+         <pos>0 0</pos>
+         <path>./_inc/images/background.png</path>
+         <maxSize>1 1</maxSize>
+         <zIndex>1</zIndex>     
+      </image> 
+       <image name="background69" extra="true">
+         <origin>0 0</origin>
+         <pos>0 0</pos>
+         <path>./_inc/images/border.png</path>
+         <maxSize>1 1</maxSize>
+         <zIndex>50</zIndex>     
+      </image>                                             
+   </view>
+
+
+   <view name="video,detailed,gamecarousel">
+      <image name="logo">
+         <origin>0.0 0.0</origin>      
+         <pos>0.02 0.0389</pos>
+         <maxSize>0.185 1</maxSize>
+      </image>    
+      <image name="md_image">
+        <pos>0.285 0.296</pos>
+        <origin>0.5 0.5</origin>
+        <maxSize>0.5 0.5</maxSize>
+         <zIndex>16</zIndex>     
+      </image>
+      <image name="md_marquee">
+        <pos>0.28 0.865</pos>
+        <origin>0.5 0.5</origin>
+        <maxSize>0.4 0.1</maxSize>
+         <zIndex>16</zIndex>     
+      </image>      
+     <video name="md_video">
+        <default>./_inc/videos/_default.mp4</default>
+        <visible>true</visible>	 	 
+        <rotation>0</rotation>  
+        <roundCorners>0.00</roundCorners>             
+        <pos>0.020 0.0277</pos>
+        <origin>0 0</origin>
+        <size>0.5263 0.5305</size>
+        <color>FFFFFF</color>
+        <zIndex>17</zIndex>		             
+      </video>
+      <image name="background59" extra="true">
+         <origin>0 0</origin>
+         <pos>0 0</pos>
+         <path>./_inc/images/background2.png</path>
+         <maxSize>1 1</maxSize>
+         <zIndex>1</zIndex>     
+      </image>            
+      <image name="background55" extra="true">
+         <origin>0 0</origin>
+         <pos>0 0</pos>
+         <path>./_inc/images/video.png</path>
+         <maxSize>1 1</maxSize>
+         <zIndex>19</zIndex>     
+      </image>
+
+                                      
+   </view>
+
+   <view name="grid">
+      <image name="logo">
+         <origin>0.0 0.0</origin>      
+         <pos>0.02 0.0389</pos>
+         <maxSize>0.185 1</maxSize>
+      </image>    
+      <image name="md_marquee">
+        <pos>0.28 0.865</pos>
+        <origin>0.5 0.5</origin>
+        <maxSize>0.4 0.1</maxSize>
+         <zIndex>16</zIndex>     
+      </image>
+      <image name="md_image">
+        <pos>0.285 0.296</pos>
+        <origin>0.5 0.5</origin>
+        <maxSize>0.5 0.5</maxSize>
+         <zIndex>16</zIndex>     
+      </image>       
+     <video name="md_video">
+        <default>./_inc/videos/_default.mp4</default>
+        <visible>true</visible>	 	 
+        <rotation>0</rotation>  
+        <roundCorners>0.00</roundCorners>             
+        <pos>0.020 0.0277</pos>
+        <origin>0 0</origin>
+        <size>0.5263 0.5305</size>
+        <color>FFFFFF</color>
+        <zIndex>17</zIndex>		             
+      </video>
+      <image name="background59" extra="true">
+         <origin>0 0</origin>
+         <pos>0 0</pos>
+         <path>./_inc/images/background2.png</path>
+         <maxSize>1 1</maxSize>
+         <zIndex>1</zIndex>     
+      </image>             
+      <image name="background55" extra="true">
+         <origin>0 0</origin>
+         <pos>0 0</pos>
+         <path>./_inc/images/video.png</path>
+         <maxSize>1 1</maxSize>
+         <zIndex>1</zIndex>     
+      </image>
+                                                
+   </view>
+
+<view name="gamecarousel">
+<gamecarousel name="gamecarousel">
+        <zIndex>400</zIndex>	      
+        <type>vertical</type>
+         <pos>0.56 0.2</pos>
+         <size>0.42 0.76</size> 
+        <logoSize>0.7 0.7</logoSize>
+        <color>00000000</color>
+        <maxLogoCount>5</maxLogoCount>
+		<logoAlignment>center</logoAlignment>        
+		<imageSource>marquee</imageSource>
+</gamecarousel>    
+</view>
+ 
+  <view name="grid">       	 
+    <imagegrid name="gamegrid">
+	  <margin>0.024 0.024</margin>
+         <pos>0.56 0.2</pos>
+         <size>0.42 0.76</size>  
+      <padding>0.024 0.024 0.024 0.024</padding>
+      <zIndex>6</zIndex>
+      <autoLayout>2 3</autoLayout>
+      <autoLayoutSelectedZoom>1.15</autoLayoutSelectedZoom>
+      <animateSelection>true</animateSelection>
+      <centerSelection>false</centerSelection>
+	  <scrollLoop>true</scrollLoop>
+	  <scrollSound></scrollSound>
+	  <scrollDirection>vertical</scrollDirection>
+	  <scale>0</scale>
+	  <storyboard>
+	 <animation property="scale" from="0" to="1" begin="400" duration="175" mode="EaseOut"/>
+      </storyboard>
+	</imagegrid>
+
+ 
+<gridtile name="default">
+<padding>1 1</padding>
+<backgroundCenterColor>FFFFFF00</backgroundCenterColor>
+<backgroundEdgeColor>FFFFFF00</backgroundEdgeColor>
+<imageSizeMode>maxSize</imageSizeMode>
+<imageColor>FFFFFF</imageColor>
+<reflexion>0.09 0.0</reflexion>
+</gridtile>
+
+<gridtile name="selected">
+<backgroundCenterColor>ff000000</backgroundCenterColor>
+<backgroundEdgeColor>ff000000</backgroundEdgeColor>
+<padding>2 2</padding>
+<imageColor>FFFFFF</imageColor>
+</gridtile>
+
+<text name="gridtile">
+<color>1C00ff00</color>
+<backgroundColor>00000000</backgroundColor>
+<fontSize>0.022</fontSize>
+<alignment>center</alignment>
+<size>1 0.1</size>
+</text>
+
+<text name="gridtile_selected">
+<color>1C00ff00</color>
+<glowColor>ffffff</glowColor>
+<glowSize>0</glowSize>
+</text>
+
+
+</view> 
+
+	<view name="screen">
+		<text name="clock">
+			<color>000000</color>
+			<fontSize>0.05</fontSize>
+			<pos>0.336 0.58</pos>
+			<size>0.17 0.09</size>
+			<alignment>right</alignment>
+			<verticalAlignment>center</verticalAlignment>
+			<fontPath>./_inc/fonts/Bangers.ttf</fontPath>
+		</text>
+		<controllerActivity name="controllerActivity">
+			<pos>1.5 0.695</pos>
+			<size>0.28 0.04</size>
+			<itemSpacing>0.003</itemSpacing>
+			<color>000000</color>
+		<!-- controllers -->
+			<imagePath>./_inc/images/gamepad.svg</imagePath>
+			<gunPath>./_inc/images/gun.svg</gunPath>
+			<wheelPath>./_inc/images/wheel.svg</wheelPath>
+			<hotkeyColor>FF0000</hotkeyColor>
+		</controllerActivity>
+		<batteryIndicator name="batteryIndicator">
+			<pos>0.46 0.68</pos>
+			<size>0.07 0.06</size>
+			<horizontalAlignment>right</horizontalAlignment>
+			<incharge>./_inc/images/battery/incharge.svg</incharge>
+			<full>./_inc/images/battery/full.svg</full>
+			<at75>./_inc/images/battery/75.svg</at75>
+			<at50>./_inc/images/battery/50.svg</at50>
+			<at25>./_inc/images/battery/25.svg</at25>
+			<empty>./_inc/images/battery/empty.svg</empty>
+			<planemodeIcon>./_inc/icons/Planemode.png</planemodeIcon>
+			<color>000000</color>
+		</batteryIndicator>
+	</view>  
+   
+</theme>
